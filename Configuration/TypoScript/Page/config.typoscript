@@ -1,0 +1,15 @@
+# performance optimization
+config {
+    moveJsFromHeaderToFooter = 1
+#    compressJs = 1
+#    compressCss = 1
+    concatenateCss = 1
+    concatenateJs = 1
+    # sourceopt
+    sourceopt {
+        enabled = 1
+        formatHtml = 2
+    }
+    # allow indexing
+    index_enable = 1
+}

@@ -1,0 +1,59 @@
+{
+  "name": "twoh/twoh_kickstarter",
+  "type": "typo3-cms-extension",
+  "description": "This extension serves as a kickstart for the creation and reuse of TYPO3 projects. Additional required extensions expand your TYPO3 with performance and SEO optimizations.",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "content",
+    "element",
+    "atom"
+  ],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Andreas Reichel",
+      "role": "Developer",
+      "email": "a.reichel91@outlook.com"
+    }
+  ],
+  "version": "1.0.0",
+  "require": {
+    "php": ">=8.0",
+    "typo3/cms-core": "^12.4",
+    "typo3/cms-fluid-styled-content": "^12.4",
+    "typo3/cms-seo": "^12.4",
+    "typo3/cms-form": "^12.4",
+    "b13/container": "^2.3",
+    "lochmueller/staticfilecache": "^13",
+    "lochmueller/sourceopt": "^5",
+    "twoh/twoh_base": "^1.0.0",
+    "twoh/twoh_tiny_png": "^1.0.0",
+    "twoh/twoh_content_blocks": "^1.0.0",
+    "yoast-seo-for-typo3/yoast_seo": "^9",
+    "apache-solr-for-typo3/solr": "^12",
+    "ichhabrecht/content-defender": "^3.4",
+    "fluidtypo3/vhs": "^7.0",
+    "georgringer/news": "^11.0",
+    "georgringer/numbered-pagination": "^2.0",
+    "autodudes/ai-suite": "^12.0",
+    "ext-dom": "*",
+    "ext-libxml": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "TWOH\\TwohKickstarter\\": "Classes"
+    },
+    "classmap": [
+      "Classes/"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "twoh_kickstarter"
+    }
+  }
+}

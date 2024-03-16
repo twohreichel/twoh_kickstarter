@@ -1,0 +1,18 @@
+<ul class="nav flex-column">
+    <f:for each="{footerMenu}" as="menuItem" >
+        <li class="nav-item d-flex align-items-center footer-title text-uppercase {f:if(condition:'{menuItem.children}',then:'dropdown')}">
+            <f:link.page pageUid="{menuItem.data.uid}"
+                         title="{menuItem.data.title}"
+                         class="nav-link px-0 {f:if(condition:'{menuItem.active}',then:'active')}">
+                <f:if condition='{menuItem.title}'>
+                    <f:then>
+                        <h7 class="h7 mb-0 text-white">{menuItem.title}</h7>
+                    </f:then>
+                    <f:else>
+                        <h7 class="h7 mb-0 text-white">{menuItem.data.title}</h7>
+                    </f:else>
+                </f:if>
+            </f:link.page>
+        </li>
+    </f:for>
+</ul>

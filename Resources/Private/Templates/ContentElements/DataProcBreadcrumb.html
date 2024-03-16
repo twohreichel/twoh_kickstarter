@@ -1,0 +1,23 @@
+<nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <f:for each="{breadcrumb}" as="item" iteration="i">
+            <li class="breadcrumb-item {f:if(condition: item.current, then: 'active')}" aria-current="{f:if(condition: item.current, then: 'page')}">
+                <f:if condition="{item.current}">
+                    <f:then>
+                        {item.data.title}
+                    </f:then>
+                    <f:else>
+                        <f:link.page
+                                pageUid="{item.data.uid}"
+                                title="{item.data.title}"
+                                target="{item.target}"
+                        >
+                            {item.data.title}
+                        </f:link.page>
+                    </f:else>
+                </f:if>
+            </li>
+        </f:for>
+    </ol>
+</nav>
+

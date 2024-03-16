@@ -1,0 +1,25 @@
+tt_content {
+    twoh_dataprocfootermenu =< lib.contentElement
+    twoh_dataprocfootermenu {
+        templateName = DataProcFooterMenu
+        templateRootPaths.0 = EXT:twoh_kickstarter/Resources/Private/Templates/ContentElements
+        partialRootPaths.0 = EXT:twoh_kickstarter/Resources/Private/Partials/AtomElements
+        dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        dataProcessing.10 {
+            levels = 2
+            as = footerMenu
+            expandAll = 1
+            includeSpacer = 1
+            titleField = nav_title
+            special = directory
+            special.value = {$plugin.tx_twohatom.settings.footerMenu}
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.fieldName = media
+                }
+            }
+        }
+        dataProcessing.20 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}

@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{media}">
+	<!-- media files -->
+	<div class="news-detail-image col col-md-5 col-12 mb-1">
+		<f:for each="{media}" as="mediaElement">
+
+			<div class="outer">
+				<f:if condition="{mediaElement.originalResource.type}">
+					<f:then>
+						<f:if condition="{mediaElement.originalResource.type} == 2">
+							<f:render partial="Detail/MediaImage" arguments="{mediaElement: mediaElement, settings:settings}"/>
+						</f:if>
+						<f:if condition="{mediaElement.originalResource.type} == 3">
+							<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement, settings:settings}"/>
+						</f:if>
+						<f:if condition="{mediaElement.originalResource.type} == 4">
+							<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement, settings:settings}"/>
+						</f:if>
+						<f:if condition="{mediaElement.originalResource.type} == 5">
+							<f:render partial="Detail/MediaImage" arguments="{mediaElement: mediaElement, settings:settings}"/>
+						</f:if>
+					</f:then>
+					<f:else if="{mediaElement.originalResource}">
+						<f:render partial="Detail/MediaImage" arguments="{mediaElement: mediaElement, settings:settings}"/>
+					</f:else>
+					<f:else if="{mediaElement.images}">
+						<f:render partial="Detail/MediaImage" arguments="{mediaElement: mediaElement.images.0, settings:settings}"/>
+					</f:else>
+				</f:if>
+			</div>
+		</f:for>
+	</div>
+</f:if>
+</html>

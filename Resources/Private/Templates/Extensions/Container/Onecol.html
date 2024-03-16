@@ -1,0 +1,17 @@
+<f:layout name="Boxed" />
+
+<f:section name="content">
+
+<div class="row {flexFormData.bgcolor} {flexFormData.bgcolorcol} {flexFormData.flex} {flexFormData.hideOnMobile}
+            {f:if(condition: '{flexform.marginPos} != \'-\'', then: 'm{flexFormData.marginPos}{flexFormData.margin}', else: 'my-0')}"
+>
+    <div class="col">
+        <f:for each="{children_101}" as="record">
+            <f:format.raw>
+                {record.renderedContent}
+            </f:format.raw>
+        </f:for>
+    </div>
+</div>
+
+</f:section>

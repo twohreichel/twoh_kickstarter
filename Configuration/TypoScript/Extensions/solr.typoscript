@@ -1,0 +1,203 @@
+plugin.tx_solr {
+  view {
+    templateRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Solr/
+    partialRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Partials/Extensions/Solr/
+    layoutRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Solr/
+  }
+  suggest = 1
+  suggest {
+    numberOfSuggestions = 10
+    suggestField = spell
+  }
+
+  search {
+    keepExistingParametersForNewSearches = 1
+    highlighting = 1
+
+    results {
+      showDocumentScoreAnalysis = 0
+
+      siteHighlighting = 0
+      resultsHighlighting = 0
+      resultsHighlighting {
+        fragmentSize = 300
+        wrap = <span class="label label-info">|</span>
+      }
+
+      fieldRenderingInstructions.content = TEXT
+      fieldRenderingInstructions.content {
+        field = content
+        crop = 300 | ... | 1
+      }
+    }
+
+    spellchecking {
+      searchUsingSpellCheckerSuggestion = 1
+      numberOfSuggestionsToTry = 3
+    }
+
+    lastSearches {
+      mode = global
+      limit = 10
+    }
+
+    frequentSearches {
+      useLowercaseKeywords = 1
+    }
+
+    faceting = 1
+    faceting {
+      facets.type {
+        label = Inhaltstyp
+
+        queryGroup {
+
+        }
+
+        renderingInstruction = CASE
+        renderingInstruction {
+          key.field = optionValue
+
+          default = TEXT
+          default.field = optionValue
+
+          pages = TEXT
+          pages.value = Pages
+          pages.lang.de = Seiten
+
+          tx_news_domain_model_news = TEXT
+          tx_news_domain_model_news.value = News
+          tx_news_domain_model_news.lang.de = Nachrichten
+        }
+      }
+
+      facets.category {
+        field = category_stringM
+        label = Kategorie
+
+        requirements {
+          typeIsNews {
+            facet = type
+            values = tx_news_domain_model_news
+          }
+        }
+
+        renderingInstruction = CASE
+        renderingInstruction {
+          key.field = optionValue
+          key.replacement {
+            10 {
+              search = /\s/
+              replace = _
+              useRegExp = 1
+            }
+          }
+
+          default = TEXT
+          default.field = optionValue
+        }
+      }
+    }
+  }
+
+  index {
+    fieldProcessingInstructions {
+      datetime = timestampToIsoDate
+      category_stringM = serialize
+      pageHierarchy_stringM = pathToHierarchy
+    }
+
+    queue {
+      news = 1
+      news {
+        table = tx_news_domain_model_news
+
+        fields {
+          additionalWhereClause = pid IN (100)
+
+          title = title
+
+          content = SOLR_CONTENT
+          content {
+            field = bodytext
+          }
+
+          url = TEXT
+          url {
+            typolink.parameter = 140
+            typolink.additionalParams = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]={field:uid}
+            typolink.additionalParams.insertData = 1
+            typolink.useCacheHash = 1
+            typolink.returnLast = url
+          }
+        }
+      }
+
+      pages {
+        fields {
+          content < lib.contentForSearch
+          content.stdWrap.stripHtml = 1
+        }
+      }
+    }
+  }
+
+  logging {
+    indexing {
+      indexQueueInitialization = 1
+      pageIndexed = 1
+
+      queue {
+        pages = 1
+        news = 1
+      }
+    }
+  }
+}
+
+tmp.tx_solr.search.sorting.options {
+  created < plugin.tx_solr.search.sorting.options.created
+  title < plugin.tx_solr.search.sorting.options.title
+  relevance < plugin.tx_solr.search.sorting.options.relevance
+}
+
+plugin.tx_solr.search.sorting.options < tmp.tx_solr.search.sorting.options
+plugin.tx_solr.search.sorting.options {
+  type >
+  author >
+}
+
+plugin.tx_solr.search.sorting.options {
+  created.label.lang.de = Erstellungsdatum
+  title.label.lang.de = Titel
+  relevance.label.lang.de = Relevanz
+}
+
+
+plugin.tx_solr._LOCAL_LANG {
+  default {
+    searchPlaceholder = BVCD-Search
+    searchTitle = Please enter your search term here
+    pages = Page
+    news = News
+    created = Created:
+    modified = Modified:
+    published = Published:
+    date = Date:
+    type = Type:
+    category = Category:
+  }
+
+  de {
+    searchPlaceholder = DEHOGA-Suche
+    searchTitle = Bitte geben Sie hier Ihren Suchbegriff ein
+    pages = Seite
+    news = Nachricht
+    created = Erstellt:
+    modified = Zuletzt Verändert:
+    published = Veröffentlicht:
+    date = Datum:
+    type = Inhaltstyp:
+    category = Kategorie:
+  }
+}

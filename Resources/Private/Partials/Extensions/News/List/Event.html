@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+
+<div class="event row mt-1" itemscope="itemscope" itemtype="https://schema.org/Article">
+    <div class="event-date col col-12 col-md-3 col-xl-2 text-darkBlue ps-1">
+        <h4 class="h4 mb-0">
+            <f:if condition="{newsItem.datetime}">
+                <time itemprop="datePublished"
+                      datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+                    <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+                </time>
+            </f:if>
+        </h4>
+    </div>
+    <div class="event-content col col-12 col-md-9 col-xl-10 mb-1">
+        <f:if condition="{newsItem.falMedia.0}">
+            <div class="event-image col col-md-4 col-12 ms-1 mb-1">
+                <f:image image="{newsItem.falMedia.0}" class="card-img-top" alt="{newsItem.falMedia.0.alternative}"
+                         title="{newsItem.falMedia.0.title}"/>
+            </div>
+        </f:if>
+        <f:if condition="{newsItem.title}">
+            <div class="event-content-header mb-2">
+                <n:link newsItem="{newsItem}"
+                        settings="{settings}"
+                        title="{newsItem.title}"
+                        class="text-decoration-none text-black"
+                >
+                    <h4 class="h4 mb-0">{newsItem.title}</h4>
+                </n:link>
+            </div>
+        </f:if>
+        <f:if condition="{newsItem.bodytext}">
+            <n:removeMediaTags>
+                <div class="event-content-text" itemprop="description">
+                    <h5 class="h5 mb-0">
+                        {newsItem.bodytext -> f:format.crop(maxCharacters:
+                        '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.raw()}
+                    </h5>
+                </div>
+            </n:removeMediaTags>
+        </f:if>
+    </div>
+    <hr>
+</div>
+
+</html>

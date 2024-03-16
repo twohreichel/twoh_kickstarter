@@ -1,0 +1,32 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TsConfig/BackendLayouts" extensions="tsconfig">
+
+# remove content elements
+TCEFORM.tt_content {
+    CType {
+        removeItems := addToList(div, menu_pages, menu_subpages, menu_sitemap, menu_sitemap_pages, header, text, table, textpic, image, textmedia, bullets, uploads, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, media, search, menu, script, splash)
+    }
+}
+
+# Disable automatic renaming of copied pages and items
+TCEMAIN.table.pages.disablePrependAtCopy = 1
+TCEMAIN.table.tt_content.disablePrependAtCopy = 1
+
+# add second news layout
+tx_news {
+    templateLayouts {
+        99 = LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:appointments
+    }
+}
+
+TCEMAIN {
+    linkHandler {
+        tx_news {
+            handler = TYPO3\CMS\Recordlist\LinkHandler\RecordLinkHandler
+            label = News
+            configuration {
+                table = tx_news_domain_model_news
+            }
+            scanAfter = page
+        }
+    }
+}

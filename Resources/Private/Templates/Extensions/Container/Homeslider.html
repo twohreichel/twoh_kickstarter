@@ -1,0 +1,28 @@
+<f:layout name="Boxed"/>
+
+<f:section name="content">
+    <div class="headline-slider position-absolute top-0 start-0 d-block m{flexform.marginPos}{flexform.margin}">
+        <f:for each="{children_101}" as="record">
+            <f:format.raw>
+                {record.renderedContent}
+            </f:format.raw>
+        </f:for>
+    </div>
+
+    <f:if condition="{flexform.displayArrow} === '1'">
+        <div class="down-arrow position-absolute text-center">
+            <i class="text-white h1 fa-solid fa-chevron-down"></i>
+        </div>
+    </f:if>
+
+    <f:asset.css identifier="identifier123">
+        .headline-slider,
+        .headline-slider .slick-slide,
+        .headline-slider .slick-slide img,
+        .headline-slider .slick-list {
+        width: 100%;
+        height:{flexform.sliderHeight}!important;
+        z-index: 1;
+        }
+    </f:asset.css>
+</f:section>

@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+>
+
+<f:section name="FacetsActive">
+	<f:if condition="{resultSet.facets.used -> f:count()}">
+		<div id="tx-solr-facets-in-use" class="card">
+			<div class="card-header">
+				<span><f:translate key="faceting_resultsNarrowedBy">Narrowed by</f:translate>:</span>
+			</div>
+			<ul class="list-group list-group-flush facet-option-list facet-type-options fluidfacet collapse show">
+				<f:for each="{resultSet.facets.used}" as="facet">
+					<f:for each="{facet.allFacetItems.selected}" as="item">
+						<li class="list-group-item facet-option ">
+							<a href="{s:uri.facet.removeFacetItem(facet: facet, facetItem: item)}">
+								{facet.label}: {item.label}
+								<span class="bi bi-trash"></span>
+							</a>
+						</li>
+					</f:for>
+				</f:for>
+				<li class="list-group-item facet-option ">
+					<a href="{s:uri.facet.removeAllFacets()}">
+						<f:translate key="faceting_removeAllFilters">Remove all filters</f:translate>
+						<span class="bi bi-trash"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</f:if>
+</f:section>
+
+</html>

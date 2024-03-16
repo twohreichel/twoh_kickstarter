@@ -1,0 +1,7 @@
+# override felogin templates
+plugin.tx_felogin_login {
+    view {
+        templateRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/FeLogin/
+        partialRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Partials/Extensions/FeLogin/
+    }
+}

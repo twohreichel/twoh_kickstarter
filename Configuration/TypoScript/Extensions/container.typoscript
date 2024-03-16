@@ -1,0 +1,222 @@
+tt_content.onecol < lib.contentElement
+tt_content.onecol {
+    templateName = Onecol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.twocol < lib.contentElement
+tt_content.twocol {
+    templateName = Twocol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.threecol < lib.contentElement
+tt_content.threecol {
+    templateName = Threecol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.fourcol < lib.contentElement
+tt_content.fourcol {
+    templateName = Fourcol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.foureightcol < lib.contentElement
+tt_content.foureightcol {
+    templateName = Foureightcol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.eightfourcol < lib.contentElement
+tt_content.eightfourcol {
+    templateName = Eightfourcol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.ninethreecol < lib.contentElement
+tt_content.ninethreecol {
+    templateName = Ninethreecol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.threeninecol < lib.contentElement
+tt_content.threeninecol {
+    templateName = Threeninecol
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.slickslider < lib.contentElement
+tt_content.slickslider {
+    templateName = Slickslider
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.accordion < lib.contentElement
+tt_content.accordion {
+    templateName = Accordion
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        102 = TWOH\TwohKickstarter\DataProcessing\AccordionFlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.countercontainer < lib.contentElement
+tt_content.countercontainer {
+    templateName = CounterContainer
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    partialRootPaths.0 = EXT:twoh_kickstarter/Resources/Private/Partials/AtomElements
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.homeslider < lib.contentElement
+tt_content.homeslider {
+    templateName = Homeslider
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}
+
+tt_content.partnerslider < lib.contentElement
+tt_content.partnerslider {
+    templateName = Partnerslider
+    templateRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Container
+    }
+    layoutRootPaths {
+        10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Container
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+        // Core Processing is available >= TYPO11
+        101 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        103 = TWOH\TwohKickstarter\DataProcessing\FlexFormProcessor
+    }
+}

@@ -1,0 +1,148 @@
+{namespace twoh=TWOH\TwohKickstarter\ViewHelpers}
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Detail"/>
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+    <f:if condition="{newsItem}">
+        <div class="news-detail-overlay position-fixed top-0 left-0 w-100 h-100 bg-grad-1-bottom opacity-90 mx-auto my-auto"></div>
+        <div class="news-detail-page-header position-absolute justify-content-center align-items-center d-flex">
+            <div>
+                <f:link.page pageUid="<f:cObject typoscriptObjectPath='lib.websiteRootPageId'/>"
+                             title="<f:cObject typoscriptObjectPath='lib.websiteTitle'/>" tabindex="1"
+                             class="navbar-brand">
+                    <f:image src="/theme/images/logo.svg"></f:image>
+                </f:link.page>
+            </div>
+            <div>
+                <h2 class="h2 text-uppercase text-white">
+                    <f:translate key="news-detail" extensionName="twoh_kickstarter" />
+                </h2>
+            </div>
+        </div>
+        <div class="news-detail position-absolute bg-white" id="news-detail">
+            <div class="news-detail-page pb-4 text-break">
+
+                <n:format.nothing>
+                    <n:excludeDisplayedNews newsItem="{newsItem}"/>
+                    <f:if condition="{settings.detail.showMetaTags}">
+                        <f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}"/>
+                    </f:if>
+                    <f:if condition="{newsItem.alternativeTitle}">
+                        <f:then>
+                            <n:titleTag>
+                                <f:format.htmlentitiesDecode>{newsItem.alternativeTitle}</f:format.htmlentitiesDecode>
+                            </n:titleTag>
+                        </f:then>
+                        <f:else>
+                            <n:titleTag>
+                                <f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
+                            </n:titleTag>
+                        </f:else>
+                    </f:if>
+                </n:format.nothing>
+
+                <div class="news-detail-category mb-2 text-gray">
+                    <h8 class="h8 mb-0">
+                        <f:if condition="{newsItem.datetime}">
+                        <span class="news-detail-category-date">
+                            <time itemprop="datePublished"
+                                  datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+                                <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+                            </time> |
+                        </span>
+                        </f:if>
+                        <f:if condition="{newsItem.categories}">
+                            <f:render partial="Category/Items"
+                                      arguments="{categories:newsItem.categories, settings:settings}"/>
+                        </f:if>
+                    </h8>
+                </div>
+
+                <div class="news-detail-header mb-2">
+                    <f:if condition="{newsItem.title}">
+                        <!-- title -->
+                        <div class="press-page-title">
+                            <h4 class="h4 mb-0">{newsItem.title}</h4>
+                        </div>
+                    </f:if>
+                </div>
+
+                <n:renderMedia news="{newsItem}"
+                               imgClass="img-responsive"
+                               videoClass="video-wrapper"
+                               audioClass="audio-wrapper">
+
+                    <f:if condition="{newsItem.contentElements}">
+                        <!-- content elements -->
+                        <f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">
+                            {newsItem.contentElementIdList}
+                        </f:cObject>
+                    </f:if>
+
+                    <f:render partial="Detail/MediaContainer"
+                              arguments="{media: newsItem.mediaNonPreviews, settings:settings}"/>
+
+                    <!-- main text -->
+                    <div class="news-detail-text mb-1" itemprop="articleBody">
+                        <h7 class="h7 mb-0 "><f:format.raw>{newsItem.bodytext}</f:format.raw></h7>
+                    </div>
+                </n:renderMedia>
+
+                <f:if condition="{settings.detail.showSocialShareButtons}">
+                    <f:comment>
+                        Care about the privacy of your readers?
+                        Checkout https://typo3.org/extensions/repository/view/rx_shariff
+                        and it will be used automatically!
+                    </f:comment>
+                    <n:extensionLoaded extensionKey="rx_shariff">
+                        <f:render partial="Detail/Shariff"/>
+                    </n:extensionLoaded>
+                </f:if>
+
+                <f:if condition="{newsItem.relatedFiles}">
+                    <div class="news-detail-download">
+                        <f:for each="{newsItem.relatedFiles}" as="relatedFile">
+                            <a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}"
+                               target="_blank"
+                               class="press-link w-100 position-relative text-decoration-none d-flex bg-grad-2-right text-white mt-1"
+                            >
+                                <div class="press-link-text my-1 px-1">
+                                    <h6 class="h6 mb-0">
+                                        <f:translate key="download-news-file" extensionName="twoh_kickstarter" />
+                                    </h6>
+                                </div>
+                                <div class="press-link-icon svg-white position-absolute bottom-0 end-0 pe-1">
+                                    <twoh:svg svgPath="link-external.svg"/>
+                                </div>
+                            </a>
+                        </f:for>
+                    </div>
+                </f:if>
+
+                <f:if condition="{settings.backPid}">
+                    <!-- Button Back -->
+                    <div class="news-button d-flex justify-content-start w-100 mt-3">
+                        <f:link.page pageUid="{settings.backPid}"
+                                     additionalAttributes="{type:'button'}"
+                                     class="text-decoration-none btn rounded-0 py-quarter col col-sm-4 col-6 bg-grad-2-right text-white">
+                            <h6 class="h6 mb-0">
+                                <f:translate key="back-link"/>
+                            </h6>
+                        </f:link.page>
+                    </div>
+                </f:if>
+            </div>
+        </div>
+    </f:if>
+</f:section>
+</html>

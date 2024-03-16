@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT type="array">
+                <sheetTitle>
+                    LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.sheetGeneral
+                </sheetTitle>
+                <type>array</type>
+                <el type="array">
+                    <boxed>
+                        <TCEforms>
+                            <label>LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.boxed</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </boxed>
+                    <remainOpen>
+                        <TCEforms>
+                            <label>LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.remainOpen</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </remainOpen>
+                    <marginPos>
+                        <TCEforms>
+                            <label>LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.margin.position</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <default>0</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">---</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.top</numIndex>
+                                        <numIndex index="1">t-</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.bottom</numIndex>
+                                        <numIndex index="1">b-</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.top-bottom</numIndex>
+                                        <numIndex index="1">y-</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                            </config>
+                        </TCEforms>
+                    </marginPos>
+                    <margin>
+                        <TCEforms>
+                            <label>LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:gridelement.container.settings.margin</label>
+                            <displayCond>FIELD:marginPos:!=:-</displayCond>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array"></items>
+                                <itemsProcFunc>TWOH\TwohKickstarter\UserFunctions\AtomElementRenderer->renderMarginValues</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                            </config>
+                        </TCEforms>
+                    </margin>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

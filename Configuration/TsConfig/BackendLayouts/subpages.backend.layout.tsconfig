@@ -1,0 +1,42 @@
+# Fullscreenlayout
+mod.web_layout.BackendLayouts {
+    atom_subpages {
+        title = LLL:EXT:twoh_kickstarter/Resources/Private/Language/locallang.xlf:backendLayout.sub.base.title
+        icon = EXT:twoh_kickstarter/Resources/Public/Icons/Extension.svg
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 2
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Sliderbereich
+                                colPos = 1
+                                allowed {
+                                    CType = homeslider, shortcut
+                                }
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Hauptbereich
+                                colPos = 0
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Fußbereich
+                                colPos = 2
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

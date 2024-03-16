@@ -1,0 +1,18 @@
+<html
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+        data-namespace-typo3-fluid="true"
+>
+    <f:if condition="{flexform.marginPos} == 'top'">
+        <div class="h-{flexform.margin}"></div>
+    </f:if>
+
+    <f:render section="content" />
+
+    <f:if condition="{flexform.marginPos} == 'bottom'">
+        <div class="h-{flexform.margin}"></div>
+    </f:if>
+
+    <f:if condition="!{flexform.margin}">
+        <div class="h-small"></div>
+    </f:if>
+</html>

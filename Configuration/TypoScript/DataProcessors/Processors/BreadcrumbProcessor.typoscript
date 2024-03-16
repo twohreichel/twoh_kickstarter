@@ -1,0 +1,16 @@
+tt_content {
+    twoh_dataprocbreadcrumb =< lib.contentElement
+    twoh_dataprocbreadcrumb {
+        templateName = DataProcBreadcrumb
+        templateRootPaths.0 = EXT:twoh_kickstarter/Resources/Private/Templates/ContentElements
+        partialRootPaths.0 = EXT:twoh_kickstarter/Resources/Private/Partials/AtomElements
+        dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        dataProcessing.10 {
+            as = breadcrumb
+            includeNotInMenu = 1
+            titleField = nav_title
+            special = rootline
+            special.range = 0|-1
+        }
+    }
+}

@@ -1,0 +1,59 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+    <div class="news-list-module w-100 text-break" itemscope="itemscope" itemtype="https://schema.org/Article">
+        <hr>
+        <div class="news-list-module-content px-1">
+            <div class="news-list-module-category text-gray my-1">
+                <h8 class="h8 mb-0">
+                    <f:if condition="{newsItem.datetime}">
+                    <span class="news-list-module-category-date">
+                        <time itemprop="datePublished"
+                              datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+                            <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+                        </time> |
+                    </span>
+                    </f:if>
+                    <f:if condition="{newsItem.categories}">
+                        <f:render partial="Category/Items"
+                                  arguments="{categories:newsItem.categories, settings:settings}"/>
+                    </f:if>
+                </h8>
+            </div>
+            <f:if condition="{newsItem.title}">
+                <div class="news-list-module-title mb-1">
+                    <n:link newsItem="{newsItem}"
+                            settings="{settings}"
+                            title="{newsItem.title}"
+                            class="text-decoration-none text-black"
+                    >
+                        <h4 class="h4 mb-0">{newsItem.title}</h4>
+                    </n:link>
+                </div>
+            </f:if>
+            <f:if condition="{newsItem.falMedia.0}">
+                <div class="news-list-module-image mb-1">
+                    <f:image image="{newsItem.falMedia.0}" class="card-img-top" alt="{newsItem.falMedia.0.alternative}"
+                             title="{newsItem.falMedia.0.title}"/>
+                </div>
+            </f:if>
+            <f:if condition="{newsItem.bodytext}">
+                <n:removeMediaTags>
+                    <div class="news-list-module-text mb-2" itemprop="description">
+                        <h5 class="h5 mb-0">
+                            {newsItem.bodytext -> f:format.crop(maxCharacters:
+                            '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.raw()}
+                        </h5>
+                    </div>
+                </n:removeMediaTags>
+            </f:if>
+        </div>
+        <hr>
+    </div>
+
+
+</html>

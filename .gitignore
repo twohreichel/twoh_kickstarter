@@ -1,0 +1,13 @@
+# idea
+.idea
+.directory
+config.codekit
+.DS_Store
+.codekit-cache
+
+# nodejs
+/node*
+
+# build directory
+#/Resources/Public/Build/*
+#!/Resources/Public/Build/.gitkeep
