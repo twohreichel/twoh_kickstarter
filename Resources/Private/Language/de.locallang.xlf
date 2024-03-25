@@ -402,6 +402,15 @@
             <trans-unit id="xxxl" xml:space="preserve">
                 <target>XXXL</target>
             </trans-unit>
+            <trans-unit id="superlarge6" xml:space="preserve">
+                <target>6 facher Abstand</target>
+            </trans-unit>
+            <trans-unit id="superlarge7" xml:space="preserve">
+                <target>7 facher Abstand</target>
+            </trans-unit>
+            <trans-unit id="superlarge8" xml:space="preserve">
+                <target>8 facher Abstand</target>
+            </trans-unit>
             <trans-unit id="more" xml:space="preserve">
                 <target>mehr</target>
             </trans-unit>

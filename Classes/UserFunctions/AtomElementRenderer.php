@@ -159,6 +159,9 @@ class AtomElementRenderer
             [$this->translateByKey('xl'), 3],
             [$this->translateByKey('xxl'), 4],
             [$this->translateByKey('xxxl'), 5],
+            [$this->translateByKey('superlarge6'), 6],
+            [$this->translateByKey('superlarge7'), 7],
+            [$this->translateByKey('superlarge8'), 8],
         ];
     }
 

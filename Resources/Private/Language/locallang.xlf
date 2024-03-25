@@ -402,6 +402,15 @@
             <trans-unit id="xxxl" xml:space="preserve">
                 <source>XXXL</source>
             </trans-unit>
+            <trans-unit id="superlarge6" xml:space="preserve">
+                <source>6 times margin</source>
+            </trans-unit>
+            <trans-unit id="superlarge7" xml:space="preserve">
+                <source>7 times margin</source>
+            </trans-unit>
+            <trans-unit id="superlarge8" xml:space="preserve">
+                <source>8 times margin</source>
+            </trans-unit>
             <trans-unit id="more" xml:space="preserve">
                 <source>more</source>
             </trans-unit>
