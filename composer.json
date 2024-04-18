@@ -17,7 +17,7 @@
       "email": "a.reichel91@outlook.com"
     }
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "require": {
     "php": ">=8.0",
     "typo3/cms-core": "^12.4",
@@ -38,7 +38,9 @@
     "georgringer/numbered-pagination": "^2.0",
     "autodudes/ai-suite": "^12.0",
     "ext-dom": "*",
-    "ext-libxml": "*"
+    "ext-libxml": "*",
+    "t3/min": "^3.0",
+    "plan2net/webp": "^5.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
