@@ -41,7 +41,8 @@
     "ext-libxml": "*",
     "t3/min": "^3.0",
     "plan2net/webp": "^5.1",
-    "websedit/we-cookie-consent": "^4.0"
+    "websedit/we-cookie-consent": "^4.0",
+    "internetgalerie/ig-slug": "^1.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
