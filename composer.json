@@ -17,7 +17,7 @@
       "email": "a.reichel91@outlook.com"
     }
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "require": {
     "php": ">=8.0",
     "typo3/cms-core": "^12.4",
@@ -36,7 +36,6 @@
     "fluidtypo3/vhs": "^7.0",
     "georgringer/news": "^11.0",
     "georgringer/numbered-pagination": "^2.0",
-    "autodudes/ai-suite": "^12.0",
     "ext-dom": "*",
     "ext-libxml": "*",
     "t3/min": "^3.0",
