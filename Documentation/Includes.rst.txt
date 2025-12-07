@@ -1,0 +1,8 @@
+..  This file is used to define common abbreviations and settings
+    that are used across the documentation.
+
+..  More information: https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Includes.html
+
+..  |extension_key| replace:: twoh_kickstarter
+..  |composer_name| replace:: twoh/twoh_kickstarter
+..  |extension_name| replace:: TWOH Kickstarter

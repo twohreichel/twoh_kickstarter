@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides
+    xmlns="https://www.phpdoc.org/guides"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.phpdoc.org/guides https://docs.typo3.org/schemas/guides.xsd"
+>
+    <project
+        title="TWOH Kickstarter"
+        release="1.0.4"
+        version="1.0"
+        copyright="since 2024 by Andreas Reichel, Igor Smertin"
+    />
+
+    <extension
+        extension-key="twoh_kickstarter"
+        vendor="twoh"
+        composer="twoh/twoh_kickstarter"
+        repository="https://github.com/twohreichel/twoh_kickstarter"
+    />
+
+    <settings>
+        <setting name="project_home" value="https://github.com/twohreichel/twoh_kickstarter"/>
+        <setting name="project_contact" value="https://github.com/twohreichel/twoh_kickstarter/issues"/>
+        <setting name="project_repository" value="https://github.com/twohreichel/twoh_kickstarter"/>
+        <setting name="use_resolve_interlink" value="1"/>
+    </settings>
+
+    <inventory id="t3coreapi" url="https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/"/>
+    <inventory id="t3tsconfig" url="https://docs.typo3.org/m/typo3/reference-tsconfig/main/en-us/"/>
+    <inventory id="t3tsref" url="https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/"/>
+</guides>
