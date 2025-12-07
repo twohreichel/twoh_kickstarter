@@ -3,26 +3,6 @@ page = PAGE
 page {
     typeNum = 0
 
-    # include generated js and css
-    includeCSS {
-        atomCss = theme/css/styles.css
-    }
-
-    includeJSFooter {
-        atomJs = theme/js/bundle.js
-    }
-
-    includeJSFooterlibs {
-        jQuery = theme/js/jquery-3.7.0.min.js
-        jQuery.forceOnTop = 1
-
-        popperMin = theme/js/popper.min.js
-        bootstrapMin = theme/js/bootstrap.min.js
-        slickMin = theme/js/slick.min.js
-        purecounter_vanilla = theme/js/purecounter_vanilla.js
-        masonary = theme/js/macy.min.js
-    }
-
     # add favicon for every devicetype
     headerData {
         1568907945 = TEXT
@@ -31,34 +11,6 @@ page {
               <meta name="viewport" content="width=device-width, initial-scale=1">
               <meta name="theme-color" content="#035073">
             )
-        }
-    }
-
-    # default BackendLayout Settings
-    10 = FLUIDTEMPLATE
-    10 {
-        templateName = TEXT
-        templateName {
-            cObject = TEXT
-            cObject {
-                data = pagelayout
-                required = 1
-                case = uppercamelcase
-                split {
-                    token = pagets__
-                    cObjNum = 1
-                    1.current = 1
-                }
-            }
-            ifEmpty = Default
-        }
-
-        templateRootPaths {
-            0 = EXT:twoh_kickstarter/Resources/Private/Templates/Page/
-        }
-
-        partialRootPaths {
-            0 = EXT:twoh_kickstarter/Resources/Private/Partials/Page/
         }
     }
 }

@@ -1,10 +1,7 @@
 # performance optimization
+# Note: compressJs, compressCss, concatenateCss, concatenateJs were removed in TYPO3 12+
+# Use external build tools (webpack, vite) or AssetCollector for asset handling
 config {
-    moveJsFromHeaderToFooter = 1
-#    compressJs = 1
-#    compressCss = 1
-    concatenateCss = 1
-    concatenateJs = 1
     # sourceopt
     sourceopt {
         enabled = 1
