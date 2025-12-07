@@ -1,9 +1,4 @@
 plugin.tx_solr {
-  view {
-    templateRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Templates/Extensions/Solr/
-    partialRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Partials/Extensions/Solr/
-    layoutRootPaths.10 = EXT:twoh_kickstarter/Resources/Private/Layouts/Extensions/Solr/
-  }
   suggest = 1
   suggest {
     numberOfSuggestions = 10

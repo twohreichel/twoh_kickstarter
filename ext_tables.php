@@ -7,5 +7,5 @@ defined('TYPO3') or die();
 ExtensionManagementUtility::addStaticFile(
     'twoh_kickstarter',
     'Configuration/TypoScript',
-    'TWOH Atom Settings'
+    'TWOH Kickstarter Settings'
 );

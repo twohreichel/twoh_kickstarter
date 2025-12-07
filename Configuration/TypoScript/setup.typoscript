@@ -1,8 +1,5 @@
-# import needed extensions setup typoscript and
 @import 'EXT:twoh_kickstarter/Configuration/TypoScript/setup_extensions.typoscript'
 
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/Page" extensions="typoscript">
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/DataProcessors/Processors" extensions="typoscript">
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/Lib" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/Seo" extensions="typoscript">
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/Extensions" extensions="typoscript">

@@ -5,31 +5,47 @@
   "keywords": [
     "TYPO3",
     "extension",
-    "content",
-    "element",
-    "atom"
+    "seo",
+    "performance",
+    "kickstarter"
   ],
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Andreas Reichel",
       "role": "Developer",
       "email": "a.reichel91@outlook.com"
+    },
+    {
+      "name": "Igor Smertin",
+      "role": "Developer",
+      "email": "igor.smertin@web.de"
     }
   ],
-  "version": "1.0.3",
+  "support": {
+    "issues": "https://github.com/twohreichel/twoh_kickstarter/issues",
+    "source": "https://github.com/twohreichel/twoh_kickstarter",
+    "docs": "https://docs.typo3.org/p/twoh/twoh_kickstarter/main/en-us/"
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true,
+      "composer/installers": true
+    }
+  },
+  "version": "1.0.4",
   "require": {
-    "php": ">=8.0",
-    "typo3/cms-core": "^12.4",
-    "typo3/cms-fluid-styled-content": "^12.4",
-    "typo3/cms-seo": "^12.4",
-    "typo3/cms-form": "^12.4",
+    "php": ">=8.2 <8.4",
+    "typo3/cms-core": "^13.4",
+    "typo3/cms-fluid-styled-content": "^13.4",
+    "typo3/cms-seo": "^13.4",
+    "typo3/cms-form": "^13.4",
     "b13/container": "^2.3",
     "lochmueller/staticfilecache": "^13",
     "lochmueller/sourceopt": "^5",
     "twoh/twoh_base": "^1.0.0",
     "twoh/twoh_tiny_png": "^1.0.0",
-    "twoh/twoh_content_blocks": "^1.0.0",
     "yoast-seo-for-typo3/yoast_seo": "^9",
     "apache-solr-for-typo3/solr": "^12",
     "ichhabrecht/content-defender": "^3.4",
@@ -45,14 +61,6 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
-  },
-  "autoload": {
-    "psr-4": {
-      "TWOH\\TwohKickstarter\\": "Classes"
-    },
-    "classmap": [
-      "Classes/"
-    ]
   },
   "extra": {
     "typo3/cms": {
