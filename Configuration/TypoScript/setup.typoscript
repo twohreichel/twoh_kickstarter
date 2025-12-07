@@ -1,5 +1,4 @@
 @import 'EXT:twoh_kickstarter/Configuration/TypoScript/setup_extensions.typoscript'
-
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/Page" extensions="typoscript">
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/Seo" extensions="typoscript">
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:twoh_kickstarter/Configuration/TypoScript/Extensions" extensions="typoscript">
+@import 'EXT:twoh_kickstarter/Configuration/TypoScript/Page/*.typoscript'
+@import 'EXT:twoh_kickstarter/Configuration/TypoScript/Seo/*.typoscript'
+@import 'EXT:twoh_kickstarter/Configuration/TypoScript/Extensions/*.typoscript'

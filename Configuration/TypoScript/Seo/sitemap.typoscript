@@ -6,7 +6,7 @@ plugin.tx_seo {
                     config {
                         excludedDoktypes = 6, 254, 255, 199
                         additionalWhere = AND (no_index = 0 OR no_follow = 0)
-                        rootPage = 1
+                        rootPage = {$plugin.tx_twoh_kickstarter.settings.rootPageId}
                     }
                 }
                 news {
@@ -16,10 +16,10 @@ plugin.tx_seo {
                         additionalWhere =
                         sortField = datetime
                         lastModifiedField = tstamp
-                        pid = 98
+                        pid = {$plugin.tx_twoh_kickstarter.settings.newsStoragePid}
                         recursive = 2
                         url {
-                            pageId = 140
+                            pageId = {$plugin.tx_twoh_kickstarter.settings.newsDetailPid}
                             useCategorySinglePid = 1
 
                             hrDate = 0
@@ -37,8 +37,6 @@ plugin.tx_seo {
                                 tx_news_pi1.controller = News
                                 tx_news_pi1.action = detail
                             }
-
-                            useCacheHash = 1
                         }
                     }
                 }

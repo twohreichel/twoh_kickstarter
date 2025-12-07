@@ -4,7 +4,9 @@
         <header />
         <body>
             <trans-unit id="default" xml:space="preserve">
+                <source>Default</source>
                 <target>Standard</target>
             </trans-unit>
+        </body>
     </file>
 </xliff>

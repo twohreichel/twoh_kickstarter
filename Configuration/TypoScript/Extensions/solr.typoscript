@@ -108,7 +108,7 @@ plugin.tx_solr {
         table = tx_news_domain_model_news
 
         fields {
-          additionalWhereClause = pid IN (100)
+          additionalWhereClause = pid IN ({$plugin.tx_solr.index.queue.news.storagePids})
 
           title = title
 
@@ -119,10 +119,9 @@ plugin.tx_solr {
 
           url = TEXT
           url {
-            typolink.parameter = 140
+            typolink.parameter = {$plugin.tx_solr.index.queue.news.detailPid}
             typolink.additionalParams = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]={field:uid}
             typolink.additionalParams.insertData = 1
-            typolink.useCacheHash = 1
             typolink.returnLast = url
           }
         }

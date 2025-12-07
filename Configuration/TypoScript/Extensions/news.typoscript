@@ -4,7 +4,6 @@ config.recordLinks {
             parameter = {$plugin.tx_news.settings.defaultDetailPid}
             additionalParams.data = field:uid
             additionalParams.wrap = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]=|
-            useCacheHash = 1
 
             ATagParams.data = parameters:allParams
             target.data = parameters:target

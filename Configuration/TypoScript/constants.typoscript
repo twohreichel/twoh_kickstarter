@@ -1,1 +1,24 @@
 @import 'EXT:twoh_kickstarter/Configuration/TypoScript/constants_extensions.typoscript'
+
+# ==============================================
+# TWOH Kickstarter Constants
+# ==============================================
+
+plugin.tx_twoh_kickstarter {
+    settings {
+        # cat=twoh kickstarter/pids/10; type=int+; label=Root Page ID
+        rootPageId = 1
+        # cat=twoh kickstarter/pids/20; type=int+; label=News Storage PID (Folder with news records)
+        newsStoragePid = 98
+        # cat=twoh kickstarter/pids/30; type=int+; label=News Detail Page ID
+        newsDetailPid = 140
+    }
+}
+
+# Solr Index Queue Settings
+plugin.tx_solr.index.queue.news {
+    # cat=solr/index/10; type=int+; label=News Detail Page ID for Solr
+    detailPid = {$plugin.tx_twoh_kickstarter.settings.newsDetailPid}
+    # cat=solr/index/20; type=string; label=News Storage PIDs for Solr indexing
+    storagePids = {$plugin.tx_twoh_kickstarter.settings.newsStoragePid}
+}
