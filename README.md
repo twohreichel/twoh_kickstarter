@@ -3,7 +3,8 @@
 [![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
 [![PHP 8.2-8.3](https://img.shields.io/badge/PHP-8.2--8.3-blue.svg)](https://www.php.net/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0)
-[![Latest Version](https://img.shields.io/badge/version-1.0.4-green.svg)](https://github.com/twohreichel/twoh_kickstarter/releases)
+[![Latest Version](https://img.shields.io/badge/version-1.0.7-green.svg)](https://github.com/twohreichel/twoh_kickstarter/releases)
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ff69b4.svg)](https://github.com/sponsors/twohreichel)
 
 > **Kickstart your TYPO3 projects with performance and SEO optimizations out of the box!**
 
@@ -100,6 +101,16 @@ This kickstarter bundles the following extensions:
 - 🐛 **Issues:** [GitHub Issues](https://github.com/twohreichel/twoh_kickstarter/issues)
 - 📖 **Documentation:** [TYPO3 Docs](https://docs.typo3.org/p/twoh/twoh_kickstarter/main/en-us/)
 - 💻 **Source:** [GitHub Repository](https://github.com/twohreichel/twoh_kickstarter)
+
+---
+
+## 💖 Support This Project
+
+If you find this extension helpful and want to support its development, consider becoming a sponsor! Your support helps maintain and improve this extension, add new features, and keep it compatible with the latest TYPO3 versions.
+
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor_on_GitHub-%E2%9D%A4-ff69b4.svg?style=for-the-badge&logo=github)](https://github.com/sponsors/twohreichel)
+
+Every contribution, no matter how small, is greatly appreciated and helps keep this project alive! 🙏
 
 ---
 

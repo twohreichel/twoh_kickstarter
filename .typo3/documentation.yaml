@@ -3,6 +3,6 @@ meta:
   description: This extension serves as a kickstart for the creation and reuse of TYPO3 projects. Additional required extensions expand your TYPO3 with performance and SEO optimizations.
   author: Andreas Reichel, Igor Smertin
   license: 'GPL-2.0-or-later'
-  version: '1.0.6'
+  version: '1.0.7'
   extension-key: twoh_kickstarter
   repository: 'https://github.com/twohreichel/twoh_kickstarter'
